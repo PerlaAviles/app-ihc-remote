@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificación de Orden por Voz con JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .card {
+            border-radius: 10px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .instructions-card {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        #resultado img {
+            width: 60%; /* Ajusta el ancho según sea necesario */
+            height: auto; /* Mantiene la proporción */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+              <span class="fw-bold">Identificación de Orden por Voz</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="app-ihc-remote/index.html">Ejecución de acciones remotas</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+
+<div class="container mt-5">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div id="resultado" class="mt-3">
+        <h1 class="mb-4">Comandos</h1>
+        <div class="d-flex justify-content-start align-items-center mb-4">
+          <button onclick="startRecording()" class="btn btn-primary me-2">Empezar</button>
+          <button onclick="stopRecording()" class="btn btn-danger">Detener</button>
+        </div>
+        <h6 class="mb-3">Menciona la palabra "Comandos" y después la instrucción</h6>
+        <img src="microfono.gif" alt="Microfono" class="mb-3">
+        <p id="ordenIdentificada" class="mb-0">Orden Identificada:</p>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="card instructions-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Instrucciones</h5>
+          <p class="card-text" style="text-align: justify;">Bienvenido al centro de comandos por voz del navegador, prueba diciendo los siguientes comandos cuando presiones el botón "Empezar a grabar", para que termine de escuchar, presiona el botón detener:</p>
+          <ul class="list-group">
+            <li class="list-group-item">Abre una ventana nueva</li>
+            <li class="list-group-item">Abre la página del tec</li>
+            <li class="list-group-item">Cambia dimensiones de la ventana</li>
+            <li class="list-group-item">
+                Dime la hora actual<br>
+                <span style="font-size: smaller;"><i>Nota: La hora la dirá el sistema, ten tus bocinas encendidas</i></span>
+            </li>
+            <li class="list-group-item">Consultar clima</li>
+            <li class="list-group-item">Cierra esta ventana</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<br><br><br>
+
+<footer class="footer mt-5 py-3 bg-light">
+  <div class="container text-center">
+    <span class="text-muted">Todos los derechos reservados. Fabiola Veloz © 2024 </span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="script.js" defer></script>
+
+</body>
+</html>
+
+
+
